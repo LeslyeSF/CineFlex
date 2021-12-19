@@ -1,0 +1,220 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+.hour div:hover, .ball:hover, .infoSection button:hover, .infoTicket button:hover{
+    cursor: pointer;
+}
+body{
+    background-color: #FFFFFF;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #293845;
+}
+
+main{
+    width: 100%;
+    
+    margin: 67px 0px 117px 0px;
+}
+.title{
+    width: 100%;
+    height: 110px;
+
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+    color: #293845;
+}
+.success{
+    font-size: 24px;
+    font-weight: 700;
+    color: #247A6B;
+}
+.container{
+    width: 375px;
+
+    margin: 0px auto 0px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.data-hour{
+    width: 375px;
+
+    margin: 0px 0px 20px 0px;
+
+    padding: 0px 24px 0px 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.day{
+    font-size: 18px;
+    font-weight: 400;
+    color: #293845;
+}
+.hour{
+    margin-top: 20px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.hour div{
+    width: 82px;
+    height: 43px;
+
+    background-color: #E8833A;
+
+    font-size: 18px;
+    color: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.seatSection{
+    width: 375px;
+
+    position: absolute;
+    top: 157px;
+}
+.seats{
+    width: 375px;
+
+    padding: 0px 20px 0px 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+}
+.ball{
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+    color: #000000;
+}
+.seatSection .legend{
+    width: 100%;
+
+    padding: 15px 20px 0px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    font-size: 13px;
+    color: #4E5A65;
+}
+.legend div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infoSection{
+    width: 100%;
+
+    padding: 0px 25px 0px 25px;
+
+    margin-top: 250px;
+
+    font-size: 18px;
+    color: #293845;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.infoSection p{
+    width: 100%;
+}
+.infoSection input{
+    width: 100%;
+    height: 54px;
+
+    margin: 10px 0 10px 0;
+
+    padding: 5px 10px 5px 10px;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #D4D4D4;
+
+    border-radius: 3px;
+}
+.infoSection button, .infoTicket button{
+    width: 225px;
+    height: 42px;
+
+    margin-top: 50px;
+
+    border:0 ;
+
+    background-color: #E8833A;
+
+    font-size: 18px;
+    color: #FFFFFF;
+}
+.infoTicket{
+    width: 100%;
+
+    padding: 28px;
+
+    margin:10px;
+
+    font-size: 22px;
+    color: #293845;
+}
+.section{
+    margin: 0px 0px 20px 0px;
+
+}
+.section span{
+    font-size: 24px;
+    font-weight: 700;
+}
+.section div{
+    margin: 10px 0px 10px 0px;
+
+    line-height: 26px;
+}
+.available{
+    background-color: #C3CFD9;
+
+    border: 1px solid #808F9D;
+}
+.selected{
+    background-color: #8DD7CF;
+
+    border: 1px solid #1AAE9E;
+}
+.unavailable{
+    background-color: #FBE192;
+
+    border: 1px solid #F7C52B;
+}
+.minimize{
+    display: none;
+}
