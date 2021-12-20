@@ -6,7 +6,7 @@ export default function Footer(props){
     return(
         <FooterBox>
             <div>
-                <img src={src}/>
+                <img src={src} alt="movie"/>
             </div>
             <div>
                 <p>{title}</p>

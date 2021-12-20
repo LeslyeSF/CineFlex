@@ -45,7 +45,7 @@ export default function SectionScreen({setOrder}){
             }
 
         return(
-            <Forms>
+            <Forms key={index}>
                 {name}
                 {CPF}
                 {setName}
