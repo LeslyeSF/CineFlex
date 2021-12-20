@@ -1,7 +1,7 @@
 import BoxForm from "./style";
 
 export default function Forms(props){
-    const [name, CPF, setName, setCPF, seatname, index]= props.children;
+    const [name, CPF, setName, setCPF, seatname]= props.children;
     return(
         <BoxForm>
             <span>Assento {seatname}</span>

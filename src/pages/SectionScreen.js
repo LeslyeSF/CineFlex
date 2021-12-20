@@ -99,7 +99,7 @@ export default function SectionScreen({setOrder}){
                 day:`${dataSeats.day.date} ${dataSeats.name}`,
                 seats: ids,
                 name: name,
-                cpf: `${cpfmask [0]+""+cpfmask [1]+""+cpfmask [2]}.${cpfmask [3]+""+cpfmask [4]+""+cpfmask [5]}.${cpfmask [6]+""+cpfmask [7]+""+cpfmask [8]}-${cpfmask [9]+""+cpfmask [10]}` });
+                cpf: `${cpfmask[0]+""+cpfmask[1]+""+cpfmask[2]}.${cpfmask[3]+""+cpfmask[4]+""+cpfmask[5]}.${cpfmask[6]+""+cpfmask[7]+""+cpfmask[8]}-${cpfmask[9]+""+cpfmask[10]}` });
         });
     }
     if(loading){
