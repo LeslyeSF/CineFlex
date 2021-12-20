@@ -2,22 +2,25 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import SectionDayHour from "../components/SectionDayHour";
 import Loading from "../components/Loading";
+import Back from "../components/Back";
 
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import axios from "axios";
-import Back from "../components/Back";
 import { useNavigate } from "react-router-dom"; 
+import axios from "axios";
 
 export default function FilmScreen(){
     const navigate = useNavigate();
+
     const { idMovie } = useParams();
     const [listDay, setListDay] = useState("");
     const [movie, setMovie] = useState([]);
     const [loading, setLoading] = useState(true);
     
     useEffect(()=>{
+
         const promise = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/movies/${idMovie}/showtimes`);
+        
         promise.then((answer)=>{
            
             setListDay(answer.data.days.map((info)=> 
@@ -35,11 +38,15 @@ export default function FilmScreen(){
         });
 
     },[]);
+
     if(loading){
+
         return(
             <Loading/>
         );
+
     } else{
+
         return(
             <main>
                 <Back navigate={navigate}/>
@@ -58,5 +65,5 @@ export default function FilmScreen(){
             </main>
           );
 
-        }
+    }
 }

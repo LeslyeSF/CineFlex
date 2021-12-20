@@ -5,6 +5,7 @@ import { useState} from "react";
 
 export default function SuccessScreen({order, setOrder}){    
     const [loading, setLoading] = useState(true);
+    
     setTimeout(()=>{setLoading(false)}, 3000);
     
 
@@ -16,37 +17,45 @@ export default function SuccessScreen({order, setOrder}){
         return(
             <main>
                 <Header/>
-                <div class="title">
-                    <p class="success">Pedido feito <br/>com suscesso!</p>
+                <div className="title">
+                    <p className="success">Pedido feito <br/>com suscesso!</p>
                 </div>
 
-                <div class="container">
-                    <div class="infoTicket">
-                        <div class="section">
+                <div className="container">
+                    <div className="infoTicket">
+                        <div className="section">
                             <span>Filme e sessão</span>
                             <div>
                                 <p>{order.title}</p>
                                 <p>{order.day}</p>
                             </div>
                         </div>
-                        <div class="section">
+                        <div className="section">
                             <span>Ingressos</span>
                             <div>
                                 {order.seats}
                             </div>
                         </div>
-                        <div class="section">
-                            <span>Comprador</span>
-                            <div>
-                                <p>Nome: {order.name}</p>
-                                <p>CPF: {order.cpf}</p>
-                            </div>
+                        <div className="section">
+                            <span>Comprador(es)</span>
+                        
+                                {order.name.map((name, index)=>{
+                                    return(
+                                        <div>
+                                            <p>Nome: {name}</p>
+                                            <p>CPF: {order.cpf[index]}</p>
+                                        </div>
+                                        
+                                    );
+                                })}
+                                
+                            
                         </div>
-                        <Link to="/" onClick={()=> setOrder("")}>
-                            <button>Voltar para Home</button>
-                        </Link>
                         
                     </div>
+                    <Link to="/" onClick={()=> setOrder("")}>
+                            <button>Voltar para Home</button>
+                    </Link>
                 </div>
         </main>
         );

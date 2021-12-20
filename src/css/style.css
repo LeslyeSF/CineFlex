@@ -100,7 +100,7 @@ main{
     flex-direction: column;
     align-items: center;
 }
-.infoTicket button{
+.container button{
     width: 225px;
     height: 42px;
 
