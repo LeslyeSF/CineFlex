@@ -1,6 +1,7 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import SectionDayHour from "../components/SectionDayHour";
+import Loading from "../components/Loading";
 
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
@@ -13,6 +14,7 @@ export default function FilmScreen(){
     const { idMovie } = useParams();
     const [listDay, setListDay] = useState("");
     const [movie, setMovie] = useState([]);
+    const [loading, setLoading] = useState(true);
     
     useEffect(()=>{
         const promise = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/movies/${idMovie}/showtimes`);
@@ -28,25 +30,33 @@ export default function FilmScreen(){
 
             setMovie([answer.data.title, answer.data.posterURL]);
 
+            setTimeout(()=>{setLoading(false)}, 2000);
+
         });
 
     },[]);
-    
-    return(
-        <main>
-            <Back navigate={navigate}/>
-            <Header/>
-            <div className="title">
-                <p>Selecione o horário</p>
-            </div>
-            <div className="container">
-                {listDay}
-            
-            </div>
-            <Footer>
-                {movie[0]}
-                {movie[1]}
-            </Footer>
-        </main>
-    );
+    if(loading){
+        return(
+            <Loading/>
+        );
+    } else{
+        return(
+            <main>
+                <Back navigate={navigate}/>
+                <Header/>
+                <div className="title">
+                    <p>Selecione o horário</p>
+                </div>
+                <div className="container">
+                    {listDay}
+                
+                </div>
+                <Footer>
+                    {movie[0]}
+                    {movie[1]}
+                </Footer>
+            </main>
+          );
+
+        }
 }

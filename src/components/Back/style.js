@@ -2,7 +2,7 @@ import styled from "styled-components";
 const ButtonBack = styled.div`
     color:#E8833A;
     font-size:40px;
-    position:absolute;
+    position:fixed;
     top:10px;
     left:10px;
     z-index:10;
