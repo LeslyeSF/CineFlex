@@ -1,8 +1,23 @@
 import Header from "../components/Header"
-import Footer from "../components/Footer";
 import Film from "../components/Film";
+import axios from "axios";
+import React from "react";
 
 export default function MainScreen(){
+    const [listFiilm, setlistFilm] = React.useState("");
+
+    React.useEffect(()=>{
+        const promessa = axios.get("https://mock-api.driven.com.br/api/v4/cineflex/movies");
+        promessa.then((answer)=>{
+            
+            setlistFilm(answer.data.map(
+                (films)=> <Film src={films.posterURL} title={films.title} id={films.id}></Film>)
+            );
+
+        });
+
+    }, []);
+
     return(
         <main>
             <Header/>
@@ -10,11 +25,8 @@ export default function MainScreen(){
                 <p>Selecione o filme</p>
             </div>
             <div className="container">
-                <Film />
-                <Film />
-                <Film />
+                {listFiilm}
             </div>
-            <Footer/>
         </main>
     );
 }

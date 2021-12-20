@@ -1,5 +1,4 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-
 import "./css/CSSreset.css"
 import "./css/style.css"
 
@@ -7,6 +6,7 @@ import MainScreen from "./pages/MainScreen";
 import FilmScreen from "./pages/FilmScreen";
 import SectionScreen from "./pages/SectionScreen";
 import SuccessScreen from "./pages/SuccessScreen";
+import { useEffect } from "react";
 
 
 export default function App(){
