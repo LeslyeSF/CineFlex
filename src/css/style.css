@@ -48,47 +48,12 @@ main{
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.data-hour{
-    width: 375px;
-
-    margin: 0px 0px 20px 0px;
-
-    padding: 0px 24px 0px 24px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-.day{
-    font-size: 18px;
-    font-weight: 400;
-    color: #293845;
-}
-.hour{
-    margin-top: 20px;
-
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-.hour div{
-    width: 82px;
-    height: 43px;
-
-    background-color: #E8833A;
-
-    font-size: 18px;
-    color: #FFFFFF;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .seatSection{
     width: 375px;
 
     position: absolute;
     top: 157px;
+    
 }
 .seats{
     width: 375px;
@@ -100,19 +65,7 @@ main{
     gap: 8px;
 
 }
-.ball{
-    width: 26px;
-    height: 26px;
 
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 11px;
-    color: #000000;
-}
 .seatSection .legend{
     width: 100%;
 
@@ -200,6 +153,12 @@ main{
 
     line-height: 26px;
 }
+.available, .selected, .unavailable{
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+}
 .available{
     background-color: #C3CFD9;
 
@@ -214,7 +173,4 @@ main{
     background-color: #FBE192;
 
     border: 1px solid #F7C52B;
-}
-.minimize{
-    display: none;
 }

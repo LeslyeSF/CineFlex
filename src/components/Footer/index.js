@@ -1,12 +1,18 @@
 import FooterBox from "./style";
 
-export default function Footer(){
+export default function Footer(props){
+    const [title, src, day] = props.children;
+    
     return(
         <FooterBox>
             <div>
-                <img src="#"/>
+                <img src={src}/>
             </div>
-            <p>Titulo do filme</p>
+            <div>
+                <p>{title}</p>
+                {day === undefined ? "" : <p>{day}</p>}
+            </div>
+            
         </FooterBox>
     );
 }

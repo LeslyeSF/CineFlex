@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BoxFilm = styled.div`
+const BoxMovie= styled.div`
     width: 129px;
     height: 193px;
 
@@ -21,4 +21,4 @@ const BoxFilm = styled.div`
     }
 `;
 
-export default BoxFilm;
+export default BoxMovie;

@@ -1,17 +1,22 @@
 import Header from "../components/Header"
-import Film from "../components/Film";
+import Movie from "../components/Movie";
 import axios from "axios";
-import React from "react";
+import { useState, useEffect } from "react";
 
 export default function MainScreen(){
-    const [listFiilm, setlistFilm] = React.useState("");
+    const [listMovie, setListMovie] = useState("");
 
-    React.useEffect(()=>{
-        const promessa = axios.get("https://mock-api.driven.com.br/api/v4/cineflex/movies");
-        promessa.then((answer)=>{
+    useEffect(()=>{
+        const promise = axios.get("https://mock-api.driven.com.br/api/v4/cineflex/movies");
+        promise.then((answer)=>{
             
-            setlistFilm(answer.data.map(
-                (films)=> <Film src={films.posterURL} title={films.title} id={films.id}></Film>)
+            setListMovie(answer.data.map(
+                (movies)=> 
+                <Movie key={movies.id}> 
+                    {movies.id}
+                    {movies.title}
+                    {movies.posterURL}
+                </Movie>)
             );
 
         });
@@ -25,7 +30,7 @@ export default function MainScreen(){
                 <p>Selecione o filme</p>
             </div>
             <div className="container">
-                {listFiilm}
+                {listMovie}
             </div>
         </main>
     );

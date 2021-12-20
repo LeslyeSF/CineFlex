@@ -20,12 +20,7 @@ const FooterBox = styled.div`
     position: fixed;
     bottom: 0;
 
-    p{
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-
-    div{
+    div:nth-child(1){
         width: 64px;
         height: 89px;
 
@@ -39,6 +34,11 @@ const FooterBox = styled.div`
             width: 100%;
             height: 100%;            
         }
+    }
+    div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
 `;
